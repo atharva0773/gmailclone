@@ -2,6 +2,9 @@ import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoIosSearch } from "react-icons/io";
 import { CiCircleQuestion } from "react-icons/ci";
+import { CiSettings } from "react-icons/ci";
+import { TbGridDots } from "react-icons/tb";
+import Avatar from 'react-avatar';
 
 const Navbar = () => {
   return (
@@ -33,6 +36,15 @@ const Navbar = () => {
         <div className=" flex items-center gap-2">
           <div className="p-3 rounded-full hover:bg-gray-100 cursor-pointer">
             <CiCircleQuestion size={"24px"} className="text-gray-700"/>
+          </div>
+          <div className="p-3 rounded-full hover:bg-gray-100 cursor-pointer">
+            <CiSettings  size={"24px"} className="text-gray-700"/>
+          </div>
+          <div className="p-3 rounded-full hover:bg-gray-100 cursor-pointer">
+            <TbGridDots  size={"24px"} className="text-gray-700"/>
+          </div>
+          <div className="cursor-pointer">
+           <Avatar name="John Doe" size="40px" round={true} />
           </div>
         </div>
       </div>
