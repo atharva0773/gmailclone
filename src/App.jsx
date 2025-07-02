@@ -4,6 +4,7 @@ import Navbar from './components/shared/Navbar';
 import Body from './components/Body';
 import Inbox from './components/Inbox';
 import Mail from './components/Mail';
+import Sendmail from './components/Sendmail';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,9 @@ function App() {
     <div className='bg-[#F6F8FC] h-screen w-screen overflow-hidden'>
       <Navbar />
       <RouterProvider router={router} />
+      <div className='absolute w-[40%]  bottom-0.5 right-15 z-10'>
+        <Sendmail/>
+      </div>
     </div>
   );
 }

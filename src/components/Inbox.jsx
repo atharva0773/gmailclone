@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { FaCaretDown, FaUserFriends } from "react-icons/fa";
 import { GoTag } from "react-icons/go";
 import { IoMdMore, IoMdRefresh } from "react-icons/io";
-import { MdCropSquare, MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import { MdCropSquare, MdKeyboardArrowLeft, MdKeyboardArrowRight, MdInbox } from "react-icons/md";
 import Messages from "./Messages";
 const mailType=[
     {
-        icon:<mdInbox size={"20px"}/>,
+        icon:<MdInbox size={"20px"}/>,
         text:"Primary"
     },
     {

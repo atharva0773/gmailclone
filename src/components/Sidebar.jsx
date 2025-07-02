@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { LuPencil } from "react-icons/lu";
 import { MdOutlineInbox, MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { MdOutlineStarBorder } from "react-icons/md";
 import { GoClock } from "react-icons/go";
 import { IoMdSend } from "react-icons/io";
 import { FaRegFile } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { setOpen } from "../redux/AppSlice";
 
 const sidebarIteams = [
   {
@@ -34,10 +36,14 @@ const sidebarIteams = [
 ];
 
 const Sidebar = () => {
+  const dispatch = useDispatch();
   return (
     <div className="w-[15%]">
       <div className="p-3">
-        <button className="flex items-center gap-2 p-4 rounded-2xl hover:shadow bg-[#C2E7FF]">
+        <button
+          onClick={() => dispatch(setOpen(true))}
+          className="flex items-center gap-2 p-4 rounded-2xl hover:shadow bg-[#C2E7FF]"
+        >
           <LuPencil size={"24px"} />
           Compose
         </button>
