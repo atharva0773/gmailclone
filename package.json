@@ -15,6 +15,7 @@
     "@tailwindcss/vite": "^4.1.11",
     "avatar": "^0.1.0",
     "core-js-pure": "^3.43.0",
+    "firebase": "^11.10.0",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-avatar": "^5.0.3",

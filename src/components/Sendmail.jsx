@@ -2,22 +2,36 @@ import React, { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import { useDispatch, useSelector } from "react-redux";
 import { setOpen } from "../redux/AppSlice";
+import {db} from "../firebase"
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 const Sendmail = () => {
-  const open = useSelector((state) => state.app.open);
-  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     to: "",
     subject: "",
     message: "",
   });
+  const{ open }= useSelector(store => store.app);
+  const dispatch = useDispatch();
 
   const ChangeHandler = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  const submitHandeler = (e) => {
+  const submitHandeler = async (e) => {
+    console.log("24");
     e.preventDefault();
-    console.log(formData);
+    await addDoc(collection(db,"emails"),{
+      to:formData.to,
+      subject:formData.subject,
+      message:formData.message,
+      createdAt:serverTimestamp(),
+    });
+    dispatch(setOpen(false));
+    setFormData({
+    to: "",
+    subject: "",
+    message: "",
+    })
   };
   return (
     <div
@@ -59,7 +73,7 @@ const Sendmail = () => {
           onChange={ChangeHandler}
         ></textarea>
         <button
-          type="submit"
+          type='submit'
           className="bg-[#0B57D0] rounded-full w-fit px-4 text-white font-medium "
         >
           Send
