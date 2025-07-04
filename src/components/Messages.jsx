@@ -13,7 +13,6 @@ const Messages = () => {
         id: doc.id,
       }));
       console.log(allEmails);
-      console.log ("hey"))
     });
 
     return () => unsubscribe();
