@@ -20,8 +20,13 @@ const Message = ({ email }) => {
         <div className="flex-none text-gray-300">
           <RiStarLine className="w-6 h-6" />
         </div>
-        <div className="flex-1 ml-4 truncate text-gray-600">
-          {email?.message}
+        <div className=" flex ml-4 overflow-hidden text-gray-700">
+          <div className="text font-semibold truncate w-50">
+            {email?.subject}
+          </div>
+          <div className="text  text-gray-500 break-words line-clamp-1 w-[70dvh]">
+            {email?.message}
+          </div>
         </div>
       </div>
       <div className="text-gray-400 text-sm pl-4 whitespace-nowrap">
@@ -36,3 +41,8 @@ const Message = ({ email }) => {
 };
 
 export default Message;
+
+
+
+
+
