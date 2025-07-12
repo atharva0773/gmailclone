@@ -5,7 +5,9 @@ const  AppSlice= createSlice({
     initialState:{
         open:false,
         emails:[],
-        SelectedEmail:null
+        selectedEmail:null,
+        searchText:"",
+        user:null
     },
     reducers:{
         setOpen:(state,action)=>{
@@ -14,9 +16,17 @@ const  AppSlice= createSlice({
         setEmails:(state,action)=>{
             state.emails=action.payload;
         },
-        // setSelectedEmail:(state,action)=>
+        setSelectedEmail:(state,action)=>{
+            state.selectedEmail=action.payload;
+        },
+        setSearchText:(state,action)=>{
+            state.searchText=action.payload;
+        },
+        setUser: (state,action)=>{
+            state.user=action.payload;
+        }
 
     }
 });
-export const { setOpen,setEmails } = AppSlice.actions;
+export const { setOpen,setEmails,setSelectedEmail,setSearchText,setUser} = AppSlice.actions;
 export default AppSlice.reducer;
