@@ -7,6 +7,14 @@ import { IoMdSend } from "react-icons/io";
 import { FaRegFile } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { setOpen } from "../redux/AppSlice";
+import { MdLabelImportant, MdOutlineScheduleSend } from "react-icons/md";
+import { BsMailbox } from "react-icons/bs";
+import { RiSpam2Line } from "react-icons/ri";
+import { FaRegTrashAlt } from "react-icons/fa";
+import { MdLabelOutline } from "react-icons/md";
+import { TbMailDollar } from "react-icons/tb";
+import { IoSettingsOutline } from "react-icons/io5";
+import { CiCirclePlus } from "react-icons/ci";
 
 const sidebarIteams = [
   {
@@ -30,8 +38,44 @@ const sidebarIteams = [
     text: "Draft",
   },
   {
-    icon: <MdOutlineKeyboardArrowDown size={"24px"} />,
-    text: "More",
+    // icon: <MdOutlineKeyboardArrowDown size={"24px"} />,
+    // text: "More",
+  },
+  {
+    icon: <MdLabelImportant size={"24px"} />,
+    text: "Important",
+  },
+  {
+    icon: <MdOutlineScheduleSend size={"24px"} />,
+    text: "Schedule",
+  },
+  {
+    icon: <BsMailbox size={"24px"} />,
+    text: "All Mail",
+  },
+  {
+    icon: <RiSpam2Line size={"24px"} />,
+    text: "Spam",
+  },
+  {
+    icon: <FaRegTrashAlt size={"24px"} />,
+    text: "Trash",
+  },
+  {
+    icon: <MdLabelOutline size={"24px"} />,
+    text: "Categories",
+  },
+  {
+    icon: <TbMailDollar size={"24px"} />,
+    text: "Manage subscription",
+  },
+  {
+    icon: <IoSettingsOutline size={"24px"} />,
+    text: "Manage labels",
+  },
+  {
+    icon: <CiCirclePlus size={"24px"} />,
+    text: "Create new label",
   },
 ];
 
@@ -58,6 +102,7 @@ const Sidebar = () => {
           );
         })}
       </div>
+      <div className="text-gray-900"></div>
     </div>
   );
 };

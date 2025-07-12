@@ -53,7 +53,9 @@ const Mail = () => {
           >
             <MdDeleteOutline size={"20px"} />
           </div>
-          <div className="p-2 rounded-full hover:bg-gray-100 cursor-pointer">
+          <div 
+          
+          className="p-2 rounded-full hover:bg-gray-100 cursor-pointer">
             <MdOutlineMarkEmailUnread size={"20px"} />
           </div>
           <div className="p-2 rounded-full hover:bg-gray-100 cursor-pointer">
