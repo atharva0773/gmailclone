@@ -15,6 +15,7 @@ import { MdLabelOutline } from "react-icons/md";
 import { TbMailDollar } from "react-icons/tb";
 import { IoSettingsOutline } from "react-icons/io5";
 import { CiCirclePlus } from "react-icons/ci";
+import { MdKeyboardArrowUp } from "react-icons/md";
 
 const sidebarIteams = [
   {
@@ -37,6 +38,9 @@ const sidebarIteams = [
     icon: <FaRegFile size={"24px"} />,
     text: "Draft",
   },
+]
+
+const extraFeatures = [
   {
     // icon: <MdOutlineKeyboardArrowDown size={"24px"} />,
     // text: "More",
@@ -81,6 +85,8 @@ const sidebarIteams = [
 
 const Sidebar = () => {
   const dispatch = useDispatch();
+
+  const [isopen,setIsOpen] = useState(false);
   return (
     <div className="w-[15%]">
       <div className="p-3">
@@ -101,6 +107,31 @@ const Sidebar = () => {
             </div>
           );
         })}
+
+        {
+          isopen ? (
+            <div className="flex items-center gap-4 pl-6 py-1 rounded-r-full hover:cursor-pointer hover:bg-gray-200 my-2">
+              <MdOutlineKeyboardArrowDown size={"24px"} onClick={() => setIsOpen(!isopen)} />
+              <p>More</p>
+            </div>
+          ) : (
+            <div className="flex items-center gap-4 pl-6 py-1 rounded-r-full hover:cursor-pointer hover:bg-gray-200 my-2" onClick={() => setIsOpen(!isopen)}>
+              <MdKeyboardArrowUp size={"24px"} />
+              <p>Less</p>
+            </div>
+          )
+        }
+
+        {
+          isopen && extraFeatures.map((item, index) => {
+            return (
+              <div className="flex items-center gap-4 pl-6 py-1 rounded-r-full hover:cursor-pointer hover:bg-gray-200 my-2">
+                {item.icon}
+                <p>{item.text}</p>
+              </div>
+            );
+          })
+        }
       </div>
       <div className="text-gray-900"></div>
     </div>
